@@ -21,7 +21,7 @@ Clone the repository to your local machine.
     - [MySQL](https://www.mysql.com/) (Version: 8.0 or higher)
         - Create the user and database in MySQL as per `application.properties`
       ```properties
-         spring.datasource.url=jdbc:mysql://localhost:3306/platform
+         spring.datasource.url=jdbc:mysql://localhost:3306/emsp-account
          spring.datasource.username=root
          spring.datasource.password=1qazxsw2
       ```
@@ -56,17 +56,24 @@ There is a GitHub Actions workflow in .github/workflows/aws/aws_ecs.yml.
     * Exception Layer
     * Utility Layer
 
-2. Modeling and Validation
+2. Database Schema
+   
+   The following database schema file was exported from the auto-generated database. 
+```
+   src/resources/schema/db.sql
+```
+
+3. Modeling and Validation
     * Using PO(Persistence Object) and DTO(Data Transfer Object) to separate the data layer and service layer.
     * Using [MapStruct](https://mapstruct.org/) to convert PO to DTO and vice versa.
     * Using Lombok to reduce the boilerplate code.
     * Using Hibernate Validator to validate the request data.
 
-3. Testing
+4. Testing
 
-   3.1 Unit Tests and Integration Tests
+   4.1 Unit Tests and Integration Tests
     * Using JUnit 5, Mockito and Spring Boot Test to write the unit tests and integration tests.
     * Using Jacoco to generate test reports.
    
-   3.2 Testing APIs with Postman
+   4.2 Testing APIs with Postman
     * You can import the file postman.json to your own Postman to test
